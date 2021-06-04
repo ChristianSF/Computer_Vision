@@ -39,3 +39,33 @@ cv2.line(imagem_branco, pt1=(0,0), pt2=(512, 512),
          color=(102,255,255), thickness=5)
 plt.imshow(imagem_branco)
 
+"""##Texto"""
+
+fonte = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(imagem_branco, text="Testando", org=(10,500),
+            fontFace=fonte, fontScale=3, color=(255,255,255),
+            thickness=3, lineType=cv2.LINE_AA)
+plt.imshow(imagem_branco)
+
+nova_imagem_branco = np.zeros(shape=(512, 512, 3), dtype=np.int32)
+
+plt.imshow(nova_imagem_branco)
+
+vertices = np.array([[100,300], [200,200], [400,300],
+                    [200,400]], dtype=np.int32)
+
+vertices
+
+vertices.shape
+
+points = vertices.reshape(-1,1,2)
+
+vertices.shape
+
+points.shape
+
+points
+
+cv2.polylines(nova_imagem_branco, [points], isClosed=True,
+              color=(0,0,255), thickness=5)
+plt.imshow(nova_imagem_branco)
